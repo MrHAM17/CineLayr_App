@@ -46,15 +46,15 @@ jobs:
         working-directory: CineLayr
         run: |
           # Create central folder
-          mkdir -p UnitTestArtifacts/HTML
-          mkdir -p UnitTestArtifacts/XML
+          mkdir -p CineLayr/UnitTestArtifacts/HTML
+          mkdir -p CineLayr/UnitTestArtifacts/XML
 
           # Copy all HTML reports from all modules
-          find . -path "*/build/reports/tests/*" -type d -exec cp -r {}/* UnitTestArtifacts/HTML/ \;
+          find CineLayr -path "*/build/reports/tests/*" -type d -exec cp -r {}/* CineLayr/UnitTestArtifacts/HTML/ \;
 
           # Copy all XML results from all modules
-          find . -path "*/build/test-results/*" -type d -exec cp -r {}/* UnitTestArtifacts/XML/ \;
-      
+          find CineLayr -path "*/build/test-results/*" -type d -exec cp -r {}/* CineLayr/UnitTestArtifacts/XML/ \;
+
       # 📦 Upload aggregated reports
       - name: Upload all unit test reports
         uses: actions/upload-artifact@v4
