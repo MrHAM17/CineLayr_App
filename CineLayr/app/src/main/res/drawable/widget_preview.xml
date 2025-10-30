@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="#FCFFFFFF"
+        android:pathData="M18,3l2,4h-3l-2,-4h-2l2,4h-3l-2,-4H8l2,4H7L5,3H4C2.9,3 2,3.9 2,5v12c0,1.1 0.9,2 2,2h16c1.1,0 2,-0.9 2,-2V5c0,-1.1 -0.9,-2 -2,-2H18z" />
+</vector>
+
+<!--    for icon but not match for widget - 5e35b5fc-->
+<!--    close to icon but still different - FFBB86FC-->
+<!--    almost similar to icon therefore widget- FC5E35B5-->
+<!--    final similar to icon therefore widget- FCFFFFFF-->

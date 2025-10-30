@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+<!-- Background gradient for pre-Android 12 (xml) -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:startColor="#536DFE"
+                android:endColor="#6A3DE8"
+                android:angle="45"/>
+        </shape>
+    </item>
+
+<!-- Center icon for pre-Android 12 only (png) -->
+    <item android:gravity="center">
+        <inset
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:drawable="@drawable/ic_launcher_foreground_vector"
+            android:gravity="center" />
+    </item>
+
+</layer-list>
+
+
+        <!--    512dp is just an example — you can adjust it to 25–35% of the screen width to make it look balanced.-->
+<!--    Using dp ensures it scales correctly across different screen densities.-->
+<!--    *** ***  Better Way -->
+<!--    Convert your icon to vector, to scale it to any size without losing quality.-->
+<!--    Then in your layer-list, you just reference the vector instead of PNG:-->
