@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Main App Theme -->
+    <style name="Theme.CineLayr" parent="android:Theme.Material.Light.NoActionBar" />
+
+
+    <!-- Splash Theme for All Android 12+ Versions -->
+    <style name="Theme.CineLayr.Splash" parent="Theme.SplashScreen">
+        <!-- Static background for Android 12+ -->
+        <item name="android:windowBackground">@drawable/splash_screen_from_android_12</item>
+
+        <!-- Android 12+ Splash -->
+        <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher_foreground</item>
+        <!-- Optional animation duration -->
+        <item name="windowSplashScreenAnimationDuration">300</item>
+        <!-- Theme after splash -->
+        <item name="postSplashScreenTheme">@style/Theme.CineLayr</item>
+    </style>
+
+</resources>
+

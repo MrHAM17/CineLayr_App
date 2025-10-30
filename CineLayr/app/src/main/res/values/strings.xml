@@ -1,0 +1,23 @@
+<!--<resources>-->
+<!--<string name="app_name">CineLayr</string>-->
+<!--<string name="trending">Trending</string>-->
+<!--<string name="watchlist">Watchlist</string>-->
+<!--<string name="error_loading_movies">Error loading movies</string>-->
+<!--<string name="empty_watchlist">Your watchlist is empty</string>-->
+<!--</resources>-->
+
+
+
+<resources>
+    <string name="app_name">CineLayr</string>
+    <string name="trending">Trending</string>
+    <string name="watchlist">Watchlist</string>
+    <string name="error_loading_movies">Error loading movies</string>
+    <string name="empty_watchlist">Your watchlist is empty</string>
+    <string name="movie_details">Movie Details</string>
+    <string name="my_watchlist">My Watchlist</string>
+
+    <!-- Widget strings -->
+    <string name="widget_movie_title">CineLayr Movie</string>
+    <string name="widget_movie_description">Shows trending movies from CineLayr</string>
+</resources>

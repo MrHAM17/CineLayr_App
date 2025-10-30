@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Main App Theme -->
+    <style name="Theme.CineLayr" parent="android:Theme.Material.Light.NoActionBar" />
+
+
+    <!-- Splash Theme for Pre-Android 12 Versions -->
+    <style name="Theme.CineLayr.Splash" parent="Theme.SplashScreen">
+
+        <!-- Static background for pre-Android 12 -->
+        <item name="android:windowBackground">@drawable/splash_screen_pre_android_12</item>
+        <!-- Theme after splash -->
+        <item name="postSplashScreenTheme">@style/Theme.CineLayr</item>
+    </style>
+
+</resources>
+
