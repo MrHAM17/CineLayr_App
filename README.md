@@ -50,33 +50,35 @@ It serves as a learning + portfolio project, demonstrating production-grade prac
 
 **Key Features:**
 
-* **Modular:** With 11 modules — app, benchamrk, core:database, core:designsystem, core:navigation, core:network, data, domain, feature-trending, feature-details, feature-watchlist.
-* **Trending:** Displays a paginated list of trending movies fetched via network + cached in Room DB.
-* **Details:** Dedicated movie details screen with safe argument handling (movieId validation) & deep-link support.
-* **Watchlist:** Displays user-saved movies using local Room persistence & ViewModel state management.
-* **Theming:** Supports Light / Dark theme toggle managed through a ThemeViewModel.
-* **App Widget:** Glance-based home-screen widget shows trending movie info & deep-links into details; updates daily via WorkManager.
-* **Background Work:** WidgetUpdateWorker refreshes widget data periodically (every 24h) using Koin-injected repository.
-* **Caching & Offline Support:** Room-backed cache & local Room persistence — ensures online-offline browsing.
-* **Dependency Injection:** Async Koin initialization for app startup & Sync initialization for widgets, workers to avoid race conditions.
-* **Build & Signing Config:** Benchmark build type inherits from release, signed with a real .jks keystore, includes baseline profile generation; ProGuard keeps reflection-based classes to avoid runtime crashes.
-* **Performance Coverage:** Unit tests · Instrumented tests · Macrobenchmarks · Baseline Profile
+* **Modular Architecture:** 11 modules — app, benchmark, core:database, core:designsystem, core:navigation, core:network, data, domain, feature-trending, feature-details, feature-watchlist.
+* **Trending Movies:** Paginated list of trending movies fetched from TMDB via Ktor & cached in Room DB. Supports offline browsing using Paging3 + RemoteMediator.
+* **Movie Details:** Dedicated screen with safe argument handling (movieId validation) & deep-link support.
+* **Watchlist:** User-saved movies persisted locally in Room. Changes observed via ViewModel + Flow, ensuring offline access & real-time UI updates.
+* **Theming:** Light / Dark theme toggle, managed through a ThemeViewModel & persisted in Room for offline continuity.
+* **App Widget:** Glance-based home-screen widget displays trending movie info & deep-links to details. Updates daily via WorkManager with offline fallback using SharedPreferences.
+* **Background Sync:** WidgetUpdateWorker refreshes widget content every 24 hours, injected via Koin for safe initialization.
+* **Caching & Offline Support:** Room-backed cache for trending & watchlist ensures seamless offline experience. Widget fallback stored in SharedPreferences.
+* **Dependency Injection:** Koin async initialization for app startup & sync initialization for workers, widgets, & deep-links to prevent race conditions.
+* **Performance & Build:** Benchmark build type inherits from release, signed with a real .jks keystore, includes baseline profile generation, & ProGuard keeps reflection-based classes to avoid runtime crashes.
+* **Testing & Profiling:** Full coverage with Unit tests · Instrumented tests · Macrobenchmarks · Baseline Profile
 
 ---
 
 ## 2. Tech Stack
 
 
-* **Language:** Kotlin + Jetpack Compose
-* **Database:** Room DB
-* **Architecture:** Clean Architecture + Ktor + Room + DI + Multi-Module + Compose Navigation
+* **Language/UI:** Kotlin + Jetpack Compose (Material 3)
+* **Architecture:** Clean Architecture + Multi-Module + Compose Navigation
 * **Dependency Injection:** Koin · Async init for app · Sync init for workers, widgets, deep-links
+* **Database/Caching:** Room DB (trending, watchlist, theme) · SharedPreferences (widget fallback)
+* **Networking:** Ktor client  · With Serialization, Logging & Interceptors (injects API key from local.properties)
 * **External API:** Movies from [TMDB.Org](https://www.themoviedb.org/settings/api).
-* **Networking:** Ktor client  · With serialization & interceptors (injects API key from local.properties) + Logging + Caching enabled
-* **Images:** Coil for Compose image · Memory + Disk caching
-* **Background:** WorkManager for widget updates (startup + 24 hr sync)
+* **Paging/Mediator:** Paging3 for trending movies · RemoteMediator integrates network → Room cache
+* **Background/Scheduler:** WorkManager for widget updates (startup + 24 hr sync)
+* **Images:** Coil for Compose image loading · With Memory + Disk caching
+* **Theme Persistence:** Room via ThemeViewModel
 * **Performance & Testing:** Unit tests · Instrumented tests · Macrobenchmarks tests + Baseline Profile
-* **Continuous Integration:** GitHub Actions
+* **CI/Build:** GitHub Actions + Gradle Kotlin DSL · release & benchmark signing · ProGuard configuration
 
 ---
 
