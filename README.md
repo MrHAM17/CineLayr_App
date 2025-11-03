@@ -1,4 +1,4 @@
-# CineLayr ![Kotlin](https://img.shields.io/badge/Kotlin-2.0.21-orange) ![Android Gradle Plugin](https://img.shields.io/badge/AGP-8.12.0-blue)
+# CineLayr ![Jetpack Compose](https://img.shields.io/badge/Jetpack%20Compose-indigo) ![Kotlin](https://img.shields.io/badge/Kotlin-2.0.21-orange) ![Android Gradle Plugin](https://img.shields.io/badge/AGP-8.12.0-blue)
 ## Demo:
 <table style="width:100%;"> 
   <tr> 
